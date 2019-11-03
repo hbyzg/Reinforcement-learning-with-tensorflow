@@ -10,7 +10,7 @@ gym: 0.8.0
 
 
 import gym
-from RL_brain import DuelingDQN
+from contents.Dueling_DQN_5_3.RL_brain import DuelingDQN
 import numpy as np
 import matplotlib.pyplot as plt
 import tensorflow as tf
@@ -40,10 +40,14 @@ def train(RL):
     acc_r = [0]
     total_steps = 0
     observation = env.reset()
+    i =0
     while True:
         # if total_steps-MEMORY_SIZE > 9000: env.render()
 
         action = RL.choose_action(observation)
+        print(type(action))
+        i+=1
+        print(i)
 
         f_action = (action-(ACTION_SPACE-1)/2)/((ACTION_SPACE-1)/4)   # [-2 ~ 2] float actions
         observation_, reward, done, info = env.step(np.array([f_action]))
