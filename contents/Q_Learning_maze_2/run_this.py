@@ -13,8 +13,10 @@ View more on my tutorial page: https://morvanzhou.github.io/tutorials/
 """
 from contents.Q_Learning_maze_2.maze_env import Maze
 from contents.Q_Learning_maze_2.RL_brain import QLearningTable
-
+import time
 def update():
+    a = time.time()
+    print(int(a))
     for episode in range(1000):
         # initial observation
         observation = env.reset()
@@ -40,7 +42,10 @@ def update():
                 break
 
     # end of game
-    print('game over')
+    b = time.time()
+
+    print('game over，用时：')
+    print(int(b) - int(a))
     env.destroy()
 
 if __name__ == "__main__":

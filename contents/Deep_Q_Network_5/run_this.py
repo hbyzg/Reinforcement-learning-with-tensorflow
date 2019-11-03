@@ -1,6 +1,6 @@
 from contents.Deep_Q_Network_5.DQN_modified import DeepQNetwork
 from contents.Deep_Q_Network_5.maze_env import Maze
-
+import time
 
 def run_maze():
     step = 0
@@ -38,6 +38,8 @@ def run_maze():
 
 if __name__ == "__main__":
     # maze game
+    a = int(time.time())
+    print(a)
     env = Maze()
     RL = DeepQNetwork(env.n_actions, env.n_features,
                       learning_rate=0.01,
@@ -51,4 +53,6 @@ if __name__ == "__main__":
     env.mainloop()
     print("yes:" + str(env.YES))
     print("no" + str(env.NO))
+    b =time.time()
+    print(int(b) -int(a))
     RL.plot_cost()
