@@ -1,10 +1,10 @@
-from maze_env import Maze
-from RL_brain import DeepQNetwork
+from contents.Deep_Q_Network_5.DQN_modified import DeepQNetwork
+from contents.Deep_Q_Network_5.maze_env import Maze
 
 
 def run_maze():
     step = 0
-    for episode in range(300):
+    for episode in range(5000):
         # initial observation
         observation = env.reset()
 
@@ -49,4 +49,6 @@ if __name__ == "__main__":
                       )
     env.after(100, run_maze)
     env.mainloop()
+    print("yes:" + str(env.YES))
+    print("no" + str(env.NO))
     RL.plot_cost()

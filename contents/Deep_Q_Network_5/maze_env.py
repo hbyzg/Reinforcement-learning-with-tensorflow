@@ -25,6 +25,8 @@ MAZE_W = 4  # grid width
 
 
 class Maze(tk.Tk, object):
+    YES = 0
+    NO = 0
     def __init__(self):
         super(Maze, self).__init__()
         self.action_space = ['u', 'd', 'l', 'r']
@@ -114,10 +116,17 @@ class Maze(tk.Tk, object):
         # reward function
         if next_coords == self.canvas.coords(self.oval):
             reward = 1
+            self.YES += 1
+
             done = True
         elif next_coords in [self.canvas.coords(self.hell1)]:
             reward = -1
+            self.NO +=1
+
             done = True
+        # elif next_coords in [self.canvas.coords(self.hell2)]:
+        #     reward = -1
+        #     done = True
         else:
             reward = 0
             done = False

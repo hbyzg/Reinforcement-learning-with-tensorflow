@@ -11,13 +11,11 @@ The RL is in RL_brain.py.
 
 View more on my tutorial page: https://morvanzhou.github.io/tutorials/
 """
-
-from maze_env import Maze
-from RL_brain import QLearningTable
-
+from contents.Q_Learning_maze_2.maze_env import Maze
+from contents.Q_Learning_maze_2.RL_brain import QLearningTable
 
 def update():
-    for episode in range(100):
+    for episode in range(1000):
         # initial observation
         observation = env.reset()
 
@@ -50,4 +48,7 @@ if __name__ == "__main__":
     RL = QLearningTable(actions=list(range(env.n_actions)))
 
     env.after(100, update)
+
     env.mainloop()
+    print("yes" + str(env.YES))
+    print("No:" + str(env.NO))
