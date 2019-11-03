@@ -12,6 +12,9 @@ import numpy as np
 import tensorflow as tf
 
 np.random.seed(1)
+print(tf.__path__)
+print (np.__path__)
+
 tf.set_random_seed(1)
 
 

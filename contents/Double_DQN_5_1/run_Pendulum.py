@@ -11,11 +11,11 @@ gym: 0.8.0
 
 
 import gym
-from RL_brain import DoubleDQN
+
 import numpy as np
 import matplotlib.pyplot as plt
 import tensorflow as tf
-
+from contents.Double_DQN_5_1.RL_brain import DoubleDQN
 
 env = gym.make('Pendulum-v0')
 env = env.unwrapped
