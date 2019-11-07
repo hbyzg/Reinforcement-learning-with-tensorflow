@@ -11,7 +11,7 @@ gym: 0.8.0
 """
 
 import gym
-from RL_brain import PolicyGradient
+from contents.Policy_gradient_softmax_7.RL_brain import PolicyGradient
 import matplotlib.pyplot as plt
 
 DISPLAY_REWARD_THRESHOLD = -2000  # renders environment if total episode reward is greater then this threshold
